@@ -37,25 +37,27 @@ class UkidssClass(BaseWFAUClass):
                         'GPS': 102,
                         'GCS': 103,
                         'DXS': 104,
-                        'UDS': 105, }
+                        'UDS': 105, 
+                        'UHS': 107}
 
     programmes_long = {'Large Area Survey': 101,
                        'Galactic Plane Survey': 102,
                        'Galactic Clusters Survey': 103,
                        'Deep Extragalactic Survey': 104,
-                       'Ultra Deep Survey': 105}
+                       'Ultra Deep Survey': 105,
+                       'UKIRT Hemipshere Survey': 107}
 
     all_databases = ("UKIDSSDR11PLUS", "UKIDSSDR10PLUS", "UKIDSSDR9PLUS",
                      "UKIDSSDR8PLUS", "UKIDSSDR7PLUS",
                      "UKIDSSDR6PLUS", "UKIDSSDR5PLUS", "UKIDSSDR4PLUS",
                      "UKIDSSDR3PLUS", "UKIDSSDR2PLUS", "UKIDSSDR1PLUS",
                      "UKIDSSDR1", "UKIDSSEDRPLUS", "UKIDSSEDR", "UKIDSSSV",
-                     "WFCAMCAL08B", "U09B8v20120403", "U09B8v20100414")
+                     "WFCAMCAL08B", "U09B8v20120403", "U09B8v20100414", "UHSDR1")
 
     # needed for some WFAU queries, not for UKIDSS
     archive = None
 
-    def __init__(self, *, username=None, password=None, community=None,
+    def __init__(self, username=None, password=None, community=None,
                  database='UKIDSSDR11PLUS', programme_id='all'):
         super(UkidssClass, self).__init__(database=database,
                                           programme_id=programme_id,
